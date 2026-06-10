@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="mf-glow" x1="0" y1="0" x2="40" y2="40">
+      <stop offset="0%" stop-color="#7ba3ff"/>
+      <stop offset="100%" stop-color="#4d7fff"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="37" height="37" rx="11" stroke="url(#mf-glow)" stroke-width="1.5"/>
+  <path d="M26.5 12.2a9.4 9.4 0 1 0 0 15.6 11.4 11.4 0 0 1-9.3-7.8 11.4 11.4 0 0 1 9.3-7.8Z" fill="url(#mf-glow)"/>
+</svg>

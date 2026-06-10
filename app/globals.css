@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-void: #050608;
+  --color-navy: #0a0f1e;
+  --color-navy-2: #0d1426;
+  --color-moon: #edf2fa;
+  --color-lunar: #98a2b8;
+  --color-glow: #4d7fff;
+  --color-glow-soft: #7ba3ff;
+
+  --font-display: var(--font-sora), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument), ui-serif, serif;
+
+  --animate-accordion-down: accordion-down 0.3s ease-out;
+  --animate-accordion-up: accordion-up 0.3s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-moon);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(77, 127, 255, 0.35);
+  color: var(--color-moon);
+}
+
+/* Glassmorphism surface */
+.glass {
+  background: rgba(237, 242, 250, 0.04);
+  border: 1px solid rgba(237, 242, 250, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Electric blue rim glow, sized for cards and buttons */
+.glow-sm {
+  box-shadow: 0 0 24px rgba(77, 127, 255, 0.25);
+}
+.glow-md {
+  box-shadow:
+    0 0 40px rgba(77, 127, 255, 0.3),
+    0 0 120px rgba(77, 127, 255, 0.12);
+}
+
+/* Mono eyebrow label used above every section heading */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-glow-soft);
+}
+
+/* Hairline rule that fades at both ends */
+.rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(237, 242, 250, 0.12),
+    transparent
+  );
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-glow);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
